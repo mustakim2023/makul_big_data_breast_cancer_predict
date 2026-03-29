@@ -1,7 +1,7 @@
 # Mengimpor library
 import pandas as pd
 import streamlit as st
-import pickle
+from joblib import load
 import base64
 
 # Menghilangkan warning
@@ -61,7 +61,7 @@ st.title('Aplikasi Machine Learning untuk Prediksi Breast Cancer')
 st.subheader('MUSTAKIM - 204032510007')
 
 # Load model
-my_model = pickle.load(open('model_prediksi_breast_cancer.pkl', 'rb'))
+my_model = load('model_prediksi_breast_cancer.joblib')
 
 # Menulis text
 st.write('Silahkan masukkan data Pasien')
